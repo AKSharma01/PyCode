@@ -28,7 +28,7 @@ class WordLatency:
 
 
 if __name__ == '__main__':
-	file_path = str(raw_input("Enter the absolute path of the file without trilling slash (optional): "))
+	file_path = str(raw_input("Enter the absolute path of the file without trailing slash (optional): "))
 	file_name = str(raw_input("Enter the file with extension: "))
 	wl = WordLatency(file_path, file_name)
 	wl.wordInFile()
