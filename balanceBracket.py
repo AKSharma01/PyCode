@@ -17,7 +17,7 @@ def generateRandomNPairBracket(N):
 			elif l2 == N : 
 				lis.append('[')
 	return lis
-class balanceBracket:
+class Stack:
     def __init__(self):
         self.bracket = []
 
@@ -29,17 +29,25 @@ class balanceBracket:
             return self.bracket.pop()
     	return 
 
+class BalanceBracket:
+	"""docstring for Balance_Bracket"""
+	def __init__(self, size):
+		self.size = size		
+
+	def checkBalance(self):
+		bracket = generateRandomNPairBracket(self.size)
+		print  ''.join(bracket)
+		balanced = True
+		balance_bracket = Stack()
+		for val in bracket:
+			if val == '[' :
+				balance_bracket.add(val)
+			elif not (balance_bracket.remove()):
+				balanced = False
+				break
+		print "Ok" if balanced else "Not Ok"
 
 if __name__ == '__main__':        
 	N = int(input("Enter the no of bracket '[]' pair:  "))
-	bracket = generateRandomNPairBracket(N)
-	print  ''.join(bracket)
-	balanced = True
-	balance_bracket = balanceBracket()
-	for val in bracket:
-		if val == '[' :
-			balance_bracket.add(val)
-		elif not (balance_bracket.remove()):
-			balanced = False
-			break
-	print "Ok" if balanced else "Not Ok"
+	bb = BalanceBracket(N)
+	bb.checkBalance()
