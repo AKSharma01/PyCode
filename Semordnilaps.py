@@ -1,3 +1,5 @@
+#Question No: 3)
+
 #function for pattern recogniser
 def semordnilap_recogniser():
 	# list for storing file data
